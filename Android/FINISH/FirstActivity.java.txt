@@ -1,0 +1,31 @@
+//p248
+
+package com.example.pcuser.intentsample1;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+public class FirstActivity extends AppCompatActivity	{
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState)	{
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_first);
+		ListView listView = (ListView)findViewById(R.id.lv_first);
+		listView.setOnItemClickListener(new ListItemClickListener());
+	}
+	class ListItemClickListener implements AdapterView.OnItemClickLiestener	{
+		@Override
+		public void onItemClick(AdapterView<?> parent , View view , int position , long id)	{
+			ListView listView = (ListView)parent;
+			String item = (String)listView.getItemPosition(position);
+			Intent intent = new Intent(FirstActivity.this.SecondActivity.class);
+			intent.putExtra("SELECTED_PICT",item);
+			startActivity(intent);
+		}
+	}
+}
