@@ -1,0 +1,270 @@
+<resources>
+    <string name="app_name">LinearLayoutMondai</string>
+
+    <string name="tv_title"></string>
+    <string name="tv_name"></string>
+    <string name="tv_address"></string>
+    <string name="tv_birthday"></string>
+    <string name="tv_month"></string>
+    <string name="tv_day"></string>
+    <string name="tv_gender"></string>
+    <string name="tv_male"></string>
+    <string name="tv_female"></string>
+    <string name="tv_item"></string>
+    <string name="tv_number"></string>
+    <string name="tv_apple"></string>
+    <string name="tv_orange"></string>
+    <string name="tv_peach"></string>
+    <string name="bt_send"></string>
+
+    <string-array name="month">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="day">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+
+
+</resources>
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.yuki.linearlayoutmondai.LinearLayoutMondaiActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_title"
+        android:textSize="24.0sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_name"/>
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_address"/>
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_birthday"/>
+        <Spinner
+            android:id="@+id/sp_month"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/month"/>
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_month"/>
+        <Spinner
+            android:id="@+id/sp_day"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/day"/>
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_day"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/tv_gender"/>
+        <RadioGroup
+            android:id="@+id/rg_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rb_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_male"/>
+            <RadioButton
+                android:id="@+id/rb_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_female"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:orientation="horizontal"
+        android:background="#003399">
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_item"
+            android:textColor="#FFFFFF"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_number"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/cb_apple"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_apple"/>
+        <EditText
+            android:id="@+id/et_apple"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/cb_orange"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_orange"/>
+        <EditText
+            android:id="@+id/et_orange"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/cb_peach"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_peach"/>
+        <EditText
+            android:id="@+id/et_peach"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_send"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bt_send"/>
+</LinearLayout>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+package com.example.yuki.linearlayoutmondai;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class LinearLayoutMondaiActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_linear_layout_mondai);
+    }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

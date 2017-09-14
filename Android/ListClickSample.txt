@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">ListClickSample</string>
+
+    <string-array name="lv_greeting">
+        <item>Ç®ÇÕÇÊÇ§ÅI</item>
+        <item>Ç±ÇÒÇ…ÇøÇÕÅI</item>
+        <item>Ç±ÇÒÇŒÇÒÇÕÅI</item>
+    </string-array>
+
+</resources>
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lv_greeting"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="24dp"
+    android:paddingTop="24dp"
+    android:entries="@array/lv_greeting"
+    tools:context="com.example.yuki.listclicksample.ListClickSampleActivity">
+</ListView>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+package com.example.yuki.listclicksample;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class ListClickSampleActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_list_click_sample);
+    }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

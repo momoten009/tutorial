@@ -1,0 +1,26 @@
+¦“Á‚É•\‹L‚ª‚È‚¯‚ê‚Îjava‚Ì•”•ª‚ª–¢Š®¬
+
+ViewSample I—¹
+TableLayoutSample I—¹
+LinearLayoutMondai I—¹
+TableLayoutMondai I—¹
+ButtnClickSample(ƒtƒ@ƒCƒ‹–¼:ButtonClickSample2) C³
+ListClickSample	I—¹
+ActivityMondai1	C³
+ActivityMondai2 C³
+IntentSample1 –¢Š®¬
+IntentSample2 –¢Š®¬
+IntentMondai1	–¢Š®¬
+IntentMondai2	–¢Š®¬
+GreetingMondai(‰‰K‚W)	–¢Š®¬
+ImplicitIntentSample2	C³
+ImplicitIntentSample2Mondai(‰‰K‚X)	–¢Š®¬
+StartServiceSample	‚©‚È‚è–¢Š®¬
+
+‰‰K‚P‚P(IntentMondai1F‰‰K‚V)
+
+
+
+
+
+p358 PreferenceSample??

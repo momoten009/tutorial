@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">IntentSample1</string>
+
+    <string name="iv_fruit">‰Ê•¨‚Ì‰æ‘œ</string>
+    <string name="bt_back">‘O‚Ì‰æ–Ê‚É–ß‚é</string>
+
+    <string-array name="lv_fruit">
+        <item>Apple</item>
+        <item>Banana</item>
+        <item>Grape</item>
+    </string-array>
+</resources>
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lv_fruit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:entries="@array/lv_fruit"
+    tools:context="com.example.yuki.intentsample1.FirstActivity">
+</ListView>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yuki.intentsample1.SecondActivity">
+
+</android.support.constraint.ConstraintLayout>
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+package com.example.yuki.intentsample1;
+
+import android.app.LauncherActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.content.Intent;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+public class FirstActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_first);
+        ListView listView = (ListView)findViewById(R.id.lv_fruit);
+        listView.setOnItemClickListener(new ListItemClickListener());
+    }
+    class ListItemClickListener implements AdapterView.OnItemClickListener{
+        @Override
+        public void onItemClick(AdapterView<?> parent , View view , int position , long id){
+           ListView listView = (ListView)parent;
+            String item = (String)listView.getItemAtPosition(position);
+            Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
+            intent.putExtra("SELECTED_PICT",item);
+            startActivity(intent);
+        }
+    }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+package com.example.yuki.intentsample1;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.content.Intent;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+
+public class SecondActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
+        Intent data = getIntent();
+        Bundle extras = data.getExtras();
+        String disp_pict = extras != null ? extras.getString("SELECTED_PICT"):"";
+        ImageView image = (ImageView)findViewById(R.id.iv_fruit);
+        if(disp_pict.equals("Apple")){
+            image.setImageResource(R.drawable.apple);
+        }
+        else if(disp_pict.equals("Banana")){
+            image.setImageResource(R.drawable.banana);
+        }
+        else if(disp_pict.equals("Grape")){
+            image.setImageResource(R.drawable.grape);
+        }
+        Button button = (Button)findViewById(R.id.bt_back);
+        button.setOnClickListener(new ButtonClickListener());
+    }
+    class ButtonClickListener implements View.OnClickListener{
+        @Override
+        public void onClick(View v){
+            finish();
+        }
+    }
+}

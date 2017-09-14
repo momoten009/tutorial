@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ImplicitIntentSample2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="sp_select">アプリを選択</string>
+    <string name="bt_execute">実行します！</string>
+
+    <string-array name="sp_application">
+        <item>電話</item>
+        <item>WEBブラウザ</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IntentSample1</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="iv_fruit">果物の画像</string>
+    <string name="bt_back">前の画面に戻る</string>
+
+    <string-array name="lv_fruit">
+        <item>Apple</item>
+        <item>Banana</item>
+        <item>Grape</item>
+    </string-array>
+
+    <string name="title_activity_second">SecondActivity</string>
+
+</resources>

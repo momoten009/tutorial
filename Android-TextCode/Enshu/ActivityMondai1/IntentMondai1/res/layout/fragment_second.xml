@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_title"
+        android:textSize="24.0sp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView android:text="@string/tv_name"/>
+            <TextView
+                android:id="@+id/tv_name"
+                android:text="@string/tv_hyphen"
+                android:layout_span="4" />
+        </TableRow>
+        <TableRow>
+            <TextView android:text="@string/tv_address" />
+            <TextView
+                android:id="@+id/tv_address"
+                android:text="@string/tv_hyphen"
+                android:layout_span="4" />
+        </TableRow>
+        <TableRow>
+            <TextView android:text="@string/tv_birthday" />
+            <TextView
+                android:id="@+id/tv_month"
+                android:text="@string/tv_hyphen"/>
+            <TextView android:text="@string/tv_month" />
+            <TextView
+                android:id="@+id/tv_day"
+                android:text="@string/tv_hyphen"/>
+            <TextView
+                android:layout_width="150dp"
+                android:text="@string/tv_day" />
+        </TableRow>
+        <TableRow>
+            <TextView android:text="@string/tv_gender" />
+            <TextView
+                android:id="@+id/tv_gender"
+                android:text="@string/tv_hyphen"
+                android:layout_span="4" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:stretchColumns="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TableRow
+            android:background="#003399">
+            <TextView
+                android:layout_width="150dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:text="@string/tv_item"
+                android:textColor="#FFFFFF" />
+            <TextView
+                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/tv_number"
+                android:textColor="#FFFFFF" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="@string/tv_apple"/>
+            <TextView
+                android:id="@+id/tv_apple"
+                android:text="@string/tv_hyphen"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="@string/tv_orange"/>
+            <TextView
+                android:id="@+id/tv_orange"
+                android:text="@string/tv_hyphen"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="@string/tv_peach"/>
+            <TextView
+                android:id="@+id/tv_peach"
+                android:text="@string/tv_hyphen"/>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/bt_back"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/bt_back" />
+
+</LinearLayout>

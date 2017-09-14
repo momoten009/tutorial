@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">ActivityMondai2</string>
+
+    <string name="tv_name">お名前を入力してください。</string>
+    <string name="tv_greeting">挨拶を選択してください。</string>
+
+    <string-array name="sp_greeting">
+        <item>おはよう！</item>
+        <item>こんにちは！</item>
+        <item>こんばんは！</item>
+    </string-array>
+</resources>
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.yuki.activitymondai2.ActivityMondaiSecondActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_name"/>
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_greeting"/>
+    <Spinner
+        android:id="@+id/sp_greeting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/sp_greeting"/>
+
+
+</LinearLayout>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+package com.example.yuki.activitymondai2;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class ActivityMondaiSecondActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mondai_second);
+    }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

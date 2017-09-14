@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">ImplicitIntentSample2</string>
+
+    <string name="sp_select">アプリを選択</string>
+    <string name="bt_execute">実行します！</string>
+
+    <string-array name="sp_application">
+        <item>電話</item>
+        <item>WEBブラウザ</item>
+    </string-array>
+</resources>
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.yuki.implicitintentsample2.ImplicitIntentSampleActivity">
+
+    <Spinner
+        android:id="@+id/sp_application"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/sp_appplication"
+        android:prompt="@string/sp_select"/>
+
+    <EditText
+        android:id="@+id/bt_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"/>
+
+    <Button
+        android:id="@+id/bt_execute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bt_execute"/>
+
+</LinearLayout>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+package com.example.yuki.implicitintentsample2;
+
+import android.app.Fragment;
+import android.content.Intent;
+import android.net.Uri;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.view.View.OnClickListener;
+import android.widget.EditText;
+import android.widget.Spinner;
+
+public class ImplicitIntentSampleActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_implicit_intent_sample);
+    }
+    private static class PlaceholderFragment extends Fragment{
+        public PlaceholderFragment(){
+        }
+        @Override
+        public View onCreateView(LayoutInflater inflater , ViewGroup container , Bundle savedInstanceState){
+            View rootView = inflater.inflate(R.layout.fragment_implicitIntent_sample2,container,false);
+            Button button = (Button)rootView.findViewById(R.id.bt_execute);
+            button.setOnClickListener(new ButtonClickListener());
+            return rootView;
+        }
+        private class ButtonClickListener implements OnClickListener{
+            public void OnClick(View v){
+                EditText content = (EditText)getActivity().findViewById(R.id.et_content);
+                String contentStr = content.getText().toString();
+                Spinner application = (Spinner)getActivity().findViewById(R.id.sp_application);
+                String applicationStr = (String)application.getSelectedItem();
+                String action = null;
+                if(applicationStr.equals("電話")){
+                    action = "android.intent.action.DIAL";
+                    contentStr = "tel:"+content.getText().toString();
+                }else if(applicationStr.equals("WEBブラウザ")){
+                    action ="android.intent.action.VIEW";
+                }
+
+                Intent intent = new Intent(action, Uri.parse(contentStr));
+                startActivity(intent);
+            }
+        }
+    }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

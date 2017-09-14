@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PreferenceSample</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="tv_font">フォント:</string>
+    <string name="tv_style">スタイル:</string>
+    <string name="cb_italic">斜体</string>
+    <string name="cb_bold">太字</string>
+    <string name="bt_save">保存</string>
+    <string name="bt_display">表示</string>
+    <string name="bt_delete">削除</string>
+    <string name="tv_message">-----</string>
+
+    <string-array name="sp_font">
+        <item>明朝体</item>
+        <item>ゴシック体</item>
+        <item>等幅フォント</item>
+    </string-array>
+
+</resources>

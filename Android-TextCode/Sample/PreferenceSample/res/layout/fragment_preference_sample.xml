@@ -1,0 +1,77 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/tv_font"
+                android:textSize="18sp" />
+            <Spinner
+                android:id="@+id/sp_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="3"
+                android:entries="@array/sp_font" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/tv_style"
+                android:textSize="18sp" />
+            <CheckBox
+                android:id="@+id/cb_italic"
+                android:text="@string/cb_italic"/>
+            <CheckBox
+                android:id="@+id/cb_bold"
+                android:text="@string/cb_bold"/>
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/bt_save"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonStyle"
+            android:text="@string/bt_save"/>
+        <Button
+            android:id="@+id/bt_display"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonStyle"
+            android:text="@string/bt_display"/>
+        <Button
+            android:id="@+id/bt_delete"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonStyle"
+            android:text="@string/bt_delete"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/tv_message"
+        android:textSize="24sp" />
+
+</LinearLayout>

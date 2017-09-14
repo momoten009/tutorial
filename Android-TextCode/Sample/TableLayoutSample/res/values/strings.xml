@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TableLayoutSample</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- 各Viewで使用する文字列の定義 -->
+    <string name="tv_title1">やりたいスポーツ</string>
+    <string name="tv_title2">順位</string>
+    <string name="tv_ski">スキー</string>
+    <string name="tv_snowboard">スノーボード</string>
+    <string name="tv_golf">ゴルフ</string>
+    <string name="tv_swimming">水泳</string>
+    <string name="tv_running">マラソン</string>
+    <string name="tv_baseball">野球</string>
+    <string name="tv_soccer">サッカー</string>
+    <string name="tv_bowling">ボウリング</string>
+    <string name="tv_dot">・・・・・・・・</string>
+
+</resources>

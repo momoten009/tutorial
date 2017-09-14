@@ -1,0 +1,115 @@
+<resources>
+    <string name="app_name">ActivityMondai1</string>
+
+    <string name="tv_name">お名前を入力してください。</string>
+    <string name="tv_greeting">挨拶を選択してください。</string>
+    <string name="bt_greeting">挨拶します。</string>
+
+    <string-array name="sp_greeting">
+        <item>おはよう！</item>
+        <item>こんにちは！</item>
+        <item>こんばんは！</item>
+    </string-array>
+</resources>
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.yuki.activitymondai1.ActivityMondaiFirstActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_name"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_greeting"/>
+    <Spinner
+        android:id="@+id/sp_greeting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/sp_greeting"/>
+    <Button
+        android:id="@+id/bt_greeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bt_greeting"/>
+
+</LinearLayout>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+package com.example.yuki.activitymondai1;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.app.Activity;
+import android.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+
+public class ActivityMondaiFirstActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mondai_first);
+        if(savedInstanceState==null){
+            getFragmentManager().beginTransaction().add(R.id.container,new PlaceholderFragment()).commit();
+        }
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.activity_mondai1,menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id==R.id.action_settings){
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    private static class PlaceholderFragment extends Fragment{
+        public PlaceholderFragment(){
+        }
+        @Override
+        public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState){
+            View rootView = inflater.inflate(R.layout.fragment_activity_mondai1,container,false);
+            Button button = (Button)rootView.findViewById(R.id.bt_greeting);
+            button.setOnClickListener(new ButtonClickListener());
+            return rootView;
+        }
+        private class ButtonClickListener implements OnClickListener{
+            public void onClick(View v){
+                EditText name = (EditText)getActivity().findViewById(R.id.et_name);
+                Spinner spinner = (Spinner)getActivity().findViewById(R.id.sp_greeting);
+                String greeting = (String)spinner.getSelectedItem();
+                Toast.makeText(getActivity(),greeting + "\n" + name.getText() + "さん",Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

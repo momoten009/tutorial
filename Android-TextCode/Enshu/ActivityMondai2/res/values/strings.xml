@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ActivityMondai2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="tv_name">お名前を入力してください。</string>
+    <string name="tv_greeting">挨拶を選択してください。</string>
+
+    <string-array name="sp_greeting">
+        <item>おはよう！</item>
+        <item>こんにちは！</item>
+        <item>こんばんは！</item>
+    </string-array>
+
+</resources>

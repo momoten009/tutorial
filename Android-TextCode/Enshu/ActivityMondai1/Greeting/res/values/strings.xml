@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Greeting</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="tv_inputtime">現在時間を入力しましょう</string>
+    <string name="bt_click">クリック！</string>
+
+</resources>

@@ -1,0 +1,163 @@
+<resources>
+    <string name="app_name">ViewSample</string>
+    <string name="hellow_world">Hello World!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="tv_viewsample">Viewのサンプルです。</string>
+    <string name="cb_sample1">チェックボックス１</string>
+    <string name="cb_sample2">チェックボックス２</string>
+    <string name="rb_sample1">ラジオボタン１</string>
+    <string name="rb_sample2">ラジオボタン２</string>
+    <string name="bt_sample1">保存</string>
+
+    <string-array name ="lv_sample1">
+        <item>あいうえお</item>
+        <item>かきくけこ</item>
+        <item>さしすせそ</item>
+    </string-array>
+
+
+</resources>
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yuki.viewsample.ViewSampleActivity"
+    tools:ignore="MergeRootFrame">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="25dp"
+
+
+            android:text="@string/tv_viewsample"/>
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="25dp"
+            android:inputType="text"/>
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/cb_sample1"/>
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cb_sample2"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:orientation="vertical">
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rb_sample1"/>
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rb_sample2"/>
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="25dp"
+            android:paddingBottom="5dp"
+            android:entries="@array/lv_sample1"/>
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:paddingTop="25dp"
+            android:paddingBottom="5dp"
+            android:entries="@array/lv_sample1"/>
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bt_sample1"/>
+    </LinearLayout>
+</ScrollView>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+package com.example.yuki.viewsample;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.app.Activity;
+import android.app.ActionBar;
+import android.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.os.Build;
+
+public class ViewSampleActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_view_sample);
+        if(savedInstanceState==null){
+            getFragmentManager().beginTransaction().add(R.id.container,new PlaceholderFragment()).commit();
+        }
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.view_sample,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id==R.id.action_settings){
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public static class PlaceholderFragment extends Fragment{
+        public PlaceholderFragment(){
+
+        }
+        @Override
+        public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState){
+            View rootView = inflater.inflate(R.layout.fragment_view_sample,container,false);
+            return rootView;
+        }
+    }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
